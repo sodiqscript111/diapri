@@ -56,9 +56,9 @@ Your inputs:\n
         st.markdown("### SHAP Waterfall Plot")
         st.markdown(
             """
-            - 🟡 **Base Value**: Expected model prediction without considering input features.
-            - 🟡 **Feature Contributions**: Bars represent individual feature impact.
-            - 🟡 **Output Prediction**: Sum of base value and contributions gives final output.
+            -  **Base Value**: Expected model prediction without considering input features.
+            -  **Feature Contributions**: Bars represent individual feature impact.
+            -  **Output Prediction**: Sum of base value and contributions gives final output.
             """
         )
         st.pyplot(fig)
@@ -75,9 +75,9 @@ Your inputs:\n
     st.markdown(
         """
         ### Column Explanations
-        - 🟡 **Input Streaming**: Displays user inputs dynamically in real-time.
-        - 🟡 **SHAP Waterfall Plot**: Visualizes how each feature contributes to the model prediction.
-        - 🟡 **SHAP Force Plot**: Interactive plot showing positive/negative feature contributions.
+        -  **Input Streaming**: Displays user inputs dynamically in real-time.
+        -  **SHAP Waterfall Plot**: Visualizes how each feature contributes to the model prediction.
+        -  **SHAP Force Plot**: Interactive plot showing positive/negative feature contributions.
         \n\n\n\n""",
         unsafe_allow_html=True,
     )
