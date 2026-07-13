@@ -44,7 +44,7 @@ head = """
     margin-bottom: 20px;">
          {0} 
     </div>
-    <div style="text-align: center; font-size: 18px; color: #5D6D7E; margin-bottom: 60px;">
+    <div style="text-align: center; font-size: 18px; color: var(--text-color); opacity: 0.8; margin-bottom: 60px;">
         {1}
     </div>
     """

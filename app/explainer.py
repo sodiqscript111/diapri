@@ -47,10 +47,8 @@ def app(input_data):
             feature_names=sample_transformed.columns.tolist()
         ), show=False
     )
-    fig.patch.set_facecolor("lightblue")
-    fig.patch.set_alpha(0.3)
-    ax.set_facecolor("#023047")
-    ax.patch.set_alpha(0.5)
+    fig.patch.set_alpha(0.0)
+    ax.patch.set_alpha(0.0)
 
     # Column 2: SHAP Waterfall Plot
     with cols[1]:

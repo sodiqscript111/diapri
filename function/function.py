@@ -35,7 +35,6 @@ def make_donut(input_response, input_text, input_color=None,
     ).properties(width=R, height=R)
 
     text = plot.mark_text(align='center', 
-                          color=chart_color[0], 
                           font="Lato", 
                           fontSize=fontSize, 
                           fontWeight=100,
