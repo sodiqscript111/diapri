@@ -30,7 +30,7 @@ footer = """
     }
     </style>
     <div class="footer">
-        <p>Diabetes Prediction | Data Source: National Institute of Diabetes and Digestive and Kidney Diseases |  2024 UZNetDev <a href="https://github.com/UznetDev/Diabetes-Prediction.git" target="_blank">GitHub</a></p>
+        <p>{0} <a href="https://github.com/UznetDev/Diabetes-Prediction.git" target="_blank">{1}</a></p>
     </div>
     """
 
@@ -42,10 +42,10 @@ head = """
     font-weight: bold; 
     color: #2E86C1;
     margin-bottom: 20px;">
-         Diabetes Prediction App 
+         {0} 
     </div>
     <div style="text-align: center; font-size: 18px; color: #5D6D7E; margin-bottom: 60px;">
-        Harness the power of machine learning to predict diabetes and provide insights!
+        {1}
     </div>
     """
 

@@ -1,6 +1,6 @@
 import streamlit as st
-from data.base import about_diabets, warn
+from utils import get_text
 
 def app():
-    st.markdown(about_diabets)
-    st.warning(warn)
+    st.markdown(get_text('about_diabetes_md'))
+    st.warning(get_text('warn_text'))

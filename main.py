@@ -10,6 +10,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.sidebar.selectbox(
+    'Language / Idioma / 语言 / Asụsụ / Èdè / Harshe',
+    ['English', 'Spanish', 'Chinese', 'Igbo', 'Yoruba', 'Hausa'],
+    key='lang'
+)
+
 # Header
 from app.header import app
 app()

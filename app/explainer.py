@@ -3,6 +3,7 @@ import shap
 import time
 from loader import model
 import matplotlib.pyplot as plt
+from utils import get_text
 
 
 def app(input_data):
@@ -15,12 +16,12 @@ def app(input_data):
 
     def stream_data():
         text = f"""
-Your inputs:\n
+{get_text('your_inputs')}\n
 `Pregnancies`: {float(input_data.iloc[0]['Pregnancies'])}\n
-`Glucose`: {float(input_data.iloc[0]['Pregnancies'])}\n
-`Insulin`: {float(input_data.iloc[0]['Pregnancies'])}\n
-`BMI`: {float(input_data.iloc[0]['Pregnancies'])}\n
-`Age`: {float(input_data.iloc[0]['Pregnancies'])}
+`Glucose`: {float(input_data.iloc[0]['Glucose'])}\n
+`Insulin`: {float(input_data.iloc[0]['Insulin'])}\n
+`BMI`: {float(input_data.iloc[0]['BMI'])}\n
+`Age`: {float(input_data.iloc[0]['Age'])}
                 """
         for word in text.split(" "):
             yield word + " "
@@ -31,8 +32,8 @@ Your inputs:\n
 
     # Column 1: Stream user input
     with cols[0]:
-        st.markdown("### Input Streaming")
-        st.markdown("#### See your inputs in real-time below!")
+        st.markdown(f"### {get_text('input_streaming')}")
+        st.markdown(f"#### {get_text('see_inputs_realtime')}")
         for word in stream_data():
             st.write(word)
 
@@ -53,14 +54,8 @@ Your inputs:\n
 
     # Column 2: SHAP Waterfall Plot
     with cols[1]:
-        st.markdown("### SHAP Waterfall Plot")
-        st.markdown(
-            """
-            -  **Base Value**: Expected model prediction without considering input features.
-            -  **Feature Contributions**: Bars represent individual feature impact.
-            -  **Output Prediction**: Sum of base value and contributions gives final output.
-            """
-        )
+        st.markdown(f"### {get_text('shap_waterfall_plot')}")
+        st.markdown(get_text('shap_waterfall_md'))
         st.pyplot(fig)
 
     # SHAP Force Plot
@@ -73,16 +68,10 @@ Your inputs:\n
 
     # Explanation column
     st.markdown(
-        """
-        ### Column Explanations
-        -  **Input Streaming**: Displays user inputs dynamically in real-time.
-        -  **SHAP Waterfall Plot**: Visualizes how each feature contributes to the model prediction.
-        -  **SHAP Force Plot**: Interactive plot showing positive/negative feature contributions.
-        \n\n\n\n""",
+        f"### {get_text('column_explanations')}\n" + get_text('column_explanations_md') + "\n\n\n\n",
         unsafe_allow_html=True,
     )
 
-    # Add SHAP JS visualization
     force_plot_html = f"<head>{shap.getjs()}</head><body>{force_plot_html.html()}</body>"
-    st.markdown("### SHAP Waterfall Plot")
+    st.markdown(f"### {get_text('shap_force_plot')}")
     st.components.v1.html(force_plot_html, height=400)
